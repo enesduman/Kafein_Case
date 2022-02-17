@@ -14,6 +14,8 @@ const Header = () => {
       var local = JSON.parse(localStorage.getItem("searches"));
       setSearches(local !== null ? local : []);
     }, [localStorage.getItem("searches")]);
+  } else {
+    return null;
   }
   return (
     <nav
