@@ -66,6 +66,7 @@ function DetailPage({ data, similar_data }) {
         {similar.results.map((v, i) => {
           return (
             <Link
+              key={i}
               href={{
                 pathname: "/detail",
                 query: { id: v.id },
