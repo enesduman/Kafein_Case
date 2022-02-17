@@ -18,6 +18,7 @@ function Page({ data }) {
         {data.results.map((v, i) => {
           return (
             <Link
+              key={i}
               href={{
                 pathname: "/detail",
                 query: { id: v.id },
