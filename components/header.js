@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { query_url } from "../pages/_app";
 import styles from "../styles/Home.module.css";
 
