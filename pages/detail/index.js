@@ -36,8 +36,12 @@ function DetailPage({ data, similar_data }) {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <p>Kategori :</p>
 
-              {movie.genres.map((v) => {
-                return <p style={{ marginRight: 5 }}> {v.name} </p>;
+              {movie.genres.map((v, i) => {
+                return (
+                  <p key={i} style={{ marginRight: 5 }}>
+                    {v.name}
+                  </p>
+                );
               })}
             </div>
             <p>Yayınlanma Tarihi : {movie.release_date}</p>

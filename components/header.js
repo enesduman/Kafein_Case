@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { query_url } from "../pages/_app";
 import styles from "../styles/Home.module.css";
 
-const Header = (props) => {
+const Header = () => {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [searches, setSearches] = useState([]);
