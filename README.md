@@ -13,4 +13,6 @@ npm install
 
 npm run dev
 
+proje http://localhost:3000 portunda çalışır durumda olcaktır.
+
 ```

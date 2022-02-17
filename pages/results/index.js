@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Header from "../../components/header";
-import { api_key, base_url, image_url, query_url, token } from "../_app";
+import { image_url, query_url } from "../_app";
 
 function Page({ data }) {
-  console.log(data);
   return (
     <div>
       <Header />
@@ -57,10 +56,8 @@ function Page({ data }) {
 }
 
 export async function getServerSideProps({ query }) {
-  console.log(query);
   const res = await fetch(`${query_url}/${query.word}`);
   const data = await res.json();
-  console.log(data);
   return { props: { data } };
 }
 

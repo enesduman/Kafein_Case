@@ -1,15 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
-import { api_key, base_url, image_url, token } from "./_app";
+import { api_key, base_url, image_url } from "./_app";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { markAssetError } from "next/dist/client/route-loader";
 import Header from "../components/header";
 
 function Page({ data }) {
-  console.log(data);
   return (
     <div>
       <Header />

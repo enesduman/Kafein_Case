@@ -74,7 +74,13 @@ const Header = (props) => {
             {searches &&
               searches.map((v, i) => {
                 return (
-                  <div style={{ marginTop: 5, marginRight: 5 }} key={i}>
+                  <Link
+                    key={i}
+                    href={{
+                      pathname: "/results",
+                      query: { word: v },
+                    }}
+                  >
                     <a
                       style={{
                         border: "0.5px solid #111",
@@ -82,11 +88,13 @@ const Header = (props) => {
                         borderRadius: 5,
                         paddingRight: 10,
                         paddingLeft: 10,
+                        marginTop: 5,
+                        marginRight: 5,
                       }}
                     >
                       {v}
                     </a>
-                  </div>
+                  </Link>
                 );
               })}
           </div>

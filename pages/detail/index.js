@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../components/header";
 import { api_key, base_url, image_url } from "../_app";
 
@@ -22,7 +22,11 @@ function DetailPage({ data, similar_data }) {
         <div style={{ width: "100%", display: "flex", flexDirection: "row" }}>
           <img
             style={{ width: "40%" }}
-            src={image_url + movie.poster_path}
+            src={
+              movie.poster_path !== null
+                ? image_url + movie.poster_path
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ3fegNa5a5si6R-U2zMlldvLxAAbMSWtBnxfRzTp2SsPE1_wJj06UJqf_As34AOG6SI0&usqp=CAU"
+            }
           ></img>
           <div style={{ width: "60%", paddingLeft: 10 }}>
             <h4>Orijinal Başlık : {movie.original_title}</h4>
@@ -59,7 +63,7 @@ function DetailPage({ data, similar_data }) {
         >
           Benzer İçerikler
         </h2>
-        {similar_data.results.map((v, i) => {
+        {similar.results.map((v, i) => {
           return (
             <Link
               href={{
@@ -83,7 +87,11 @@ function DetailPage({ data, similar_data }) {
               >
                 <img
                   style={{ width: "20%" }}
-                  src={image_url + v.backdrop_path}
+                  src={
+                    v.backdrop_path !== null
+                      ? image_url + v.backdrop_path
+                      : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ3fegNa5a5si6R-U2zMlldvLxAAbMSWtBnxfRzTp2SsPE1_wJj06UJqf_As34AOG6SI0&usqp=CAU"
+                  }
                 ></img>
                 <h4>{v.title}</h4>
               </a>
