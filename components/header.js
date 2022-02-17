@@ -9,14 +9,23 @@ const Header = () => {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [searches, setSearches] = useState([]);
-  if (typeof window !== "undefined") {
-    useEffect(() => {
-      var local = JSON.parse(localStorage.getItem("searches"));
-      setSearches(local !== null ? local : []);
-    }, [localStorage.getItem("searches")]);
-  } else {
-    return null;
-  }
+  // if (typeof window !== "undefined") {
+  //   useEffect(() => {
+  //     var local = JSON.parse(localStorage.getItem("searches"));
+  //     setSearches(local !== null ? local : []);
+  //   }, [localStorage.getItem("searches")]);
+  // } else {
+  //   return null;
+  // }
+  const start = () => {
+    const local = JSON.parse(localStorage.getItem("searches"));
+    if (local) {
+      setSearches(local);
+    }
+  };
+  useEffect(() => {
+    start();
+  }, []);
   return (
     <nav
       style={{
@@ -61,6 +70,7 @@ const Header = () => {
                   );
                 }
                 setInput("");
+                start();
                 router.push({
                   pathname: "/results",
                   query: { word: input },
