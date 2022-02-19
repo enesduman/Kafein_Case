@@ -9,7 +9,7 @@ const Header = () => {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [searches, setSearches] = useState([]);
-  
+
   const start = () => {
     const local = JSON.parse(localStorage.getItem("searches"));
     if (local) {
@@ -33,7 +33,7 @@ const Header = () => {
           pathname: "/",
         }}
       >
-        <a style={{ fontSize: 25, fontWeight: "bold" }}>Kafein Case</a>
+        <a style={{ fontSize: 25, fontWeight: "bold" }}>Themoviedb</a>
       </Link>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
